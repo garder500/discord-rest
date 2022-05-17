@@ -1,0 +1,6 @@
+## default typescript gitignore
+##
+
+/node_modules/
+/dist/
+/docs/
