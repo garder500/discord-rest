@@ -17,10 +17,10 @@
     // This compiler run should
     // only output d.ts files
     "sourceMap": false,
-    "outDir": "dist",
+    "outDir": "src/",
     // go to js file when using IDE functions like
     // "Go to Definition" in VSCode
-    "declarationMap": true,
+    "declarationMap": false,
     "skipLibCheck": false,
     "esModuleInterop": true,
   }

@@ -1,7 +1,7 @@
-import { fetch } from "../utils/request";
+import fetch from "../utils/request";
 import FormData from "form-data";
 
-type optionForRequest = {
+export type optionForRequest = {
     method: string,
     headers: {
         'Content-Type'?: string,
@@ -13,7 +13,7 @@ type optionForRequest = {
     body?: any,
 }
 
-export class RestManager {
+export default class RestManager {
     private baseURL: string;
     private token: string;
     private version: number;
@@ -39,10 +39,13 @@ export class RestManager {
             headers: this.headers
         };
         if (body) {
-            options.body = body;
             if(body instanceof FormData) {
                 options.headers['Content-Type'] = 'multipart/form-data';
                 options.headers['Content-Disposition'] = body.getHeaders()['content-disposition'];
+                options.headers['Content-Length'] = body.getLengthSync().toString();
+                options.body = body;
+            }else{
+                options.body = JSON.stringify(body);
             }
         }
 
