@@ -6,7 +6,7 @@ name: publish
 on:
    push:
     branches:
-    - release
+    - master
 
 jobs:
   build:
@@ -29,6 +29,11 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npm publish
+      - run: |
+          npm i tsc -g
+          tsc
+          rm -rf node_modules
+          rm -rf lib
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
