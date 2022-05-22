@@ -30,8 +30,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: |
-          npm i tsc -g
-          tsc
+          npm install typescript
+          npx tsc
           rm -rf node_modules
           rm -rf lib
           npm publish
