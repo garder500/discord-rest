@@ -18,4 +18,15 @@ export default class Client {
         this.user = undefined;
     }
 
+    /**
+     * @description Get the user information
+     * @returns {Promise<UserType>}
+     * @memberof Client 
+     * @example
+     * client.getUser().then(user => {
+     *    console.log(user);
+     * });
+     * 
+     */
+
 }
