@@ -43,14 +43,59 @@ import Client from 'discord-rest';
 const client = new Client({ token: 'token' });
 ```
 
+In Javascript:
+
 ```js
 const Client = require('discord-rest');
 
 const client = new Client({ token: 'token' });
 ```
 
-## API
-
-### Client
+### API
 
 All methods in the Client class are static and provide access to alls Discord REST API endpoints.
+
+#### Client
+
+| Property | Description | Type |
+|----------|-------------|------|
+| `users` | Get current User by  | `UserController` |
+| `channels` | This help you to get a channel by is ID | `ChannelController` |
+| `user` | Get current User  | `User` |
+| `rest` | Get the REST API client | `RESTManager` |
+
+### Structure class
+
+#### User
+
+> createDM()
+
+make a DM Channel with the current User properties. (Bot must be in the same server as the User)
+
+> Example:
+
+```js
+client.users.get("243117191774470146").then(user => {
+    user.createDM().then(dm => {
+        console.log(dm);
+    }).catch(console.error);
+}).catch(console.error);
+```
+> DM is a Channel object 
+#### Channel
+
+> send()
+
+Send a message to the current Channel. (Bot must be in the same server as the Channel and have the right permissions)
+
+> Example:
+
+```js
+client.channels.get("243117191774470146").then(channel => {
+    channel.send("Hello World!").then(message => {
+        console.log(message);
+    }).catch(console.error);
+}).catch(console.error);
+```
+
+> Message is a Message Type, the object returned by the API.

@@ -1,7 +1,9 @@
 import { Client } from "../index";
+import ChannelType from "../types/ChannelType";
 import UserType from "../types/UserType";
 import Base from "./Base";
-export default class UserManager extends Base {
+import Channel from "./Channel";
+export default class User extends Base {
     username: string;
     created_at: number;
     public_flags: number | undefined;
@@ -34,9 +36,20 @@ export default class UserManager extends Base {
         this.created_at = Number((BigInt(user.id) >> 22n) + 1420070400000n);
     };
 
+    async createDM() {
+        let channel = await this.client.rest.post<ChannelType>(`users/@me/channels`, {
+            recipient_id: this.id
+        });
+        return new Channel(this.client,channel);
+    }
+
     async getDMChannel() {
-        let response = await this.client.rest.get(`users/${this.id}/channels`);
-        return response;
+        if(super.client && super.client.user && super.client.user.id == this.id){
+        let response = await this.client.rest.get<ChannelType>(`users/@me/channels`);
+            return new Channel(this.client,response);
+        }else{
+            throw new Error("You can't get a DM channel with someone else");
+        }
     }
 
     getAvatarURL(avatar: { size: number, format: string, dynamic: boolean } = { size: 2048, format: "png", dynamic: true }) {

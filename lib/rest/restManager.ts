@@ -1,5 +1,6 @@
 import fetch from "../utils/request";
 import FormData from "form-data";
+import util from "util";
 
 export type optionForRequest = {
     method: string,
@@ -32,7 +33,7 @@ export default class RestManager {
     // the headers are set in the function and are the default headers
     // the function returns a promise that resolves to the response
 
-    private async request(endpoint: string, method: string, body: any = null): Promise<Error | null | any> {
+    private async request<T>(endpoint: string, method: string, body: any = null): Promise<T | any> {
         let url = this.baseURL + endpoint;
         let options: optionForRequest = {
             method: method,
@@ -45,39 +46,41 @@ export default class RestManager {
                 options.headers['Content-Length'] = body.getLengthSync().toString();
                 options.body = body;
             }else{
+                options.headers['Content-Type'] = 'application/json';
                 options.body = JSON.stringify(body);
             }
         }
 
         let response = await fetch(url, options);
         if (response.status === 204) {
-            return null;
+            return;
         }
         let responseBody = await response.json();
         if (response.status !== 200 && response.status !== 201) {
+            console.error(util.inspect(responseBody, { depth: null }));
             throw new Error(responseBody.message);
         }
         return responseBody;
     }
 
-    public async get(endpoint: string): Promise<any> {
-        return await this.request(endpoint, 'GET', null);
+    public async get<T>(endpoint: string): Promise<T> {
+        return await this.request<T>(endpoint, 'GET', null);
     }
 
-    public async post(endpoint: string, body: any): Promise<any> {
-        return await this.request(endpoint, 'POST', body);
+    public async post<T>(endpoint: string, body: any): Promise<T> {
+        return await this.request<T>(endpoint, 'POST', body);
     }
 
-    public async put(endpoint: string, body: any): Promise<any> {
-        return await this.request(endpoint, 'PUT', body);
+    public async put<T>(endpoint: string, body: any): Promise<T> {
+        return await this.request<T>(endpoint, 'PUT', body);
     }
 
-    public async delete(endpoint: string, body: any): Promise<any> {
-        return await this.request(endpoint, 'DELETE', body);
+    public async delete<T>(endpoint: string, body: any): Promise<T> {
+        return await this.request<T>(endpoint, 'DELETE', body);
     }
 
-    public async patch(endpoint: string, body: any): Promise<any> {
-        return await this.request(endpoint, 'PATCH', body);
+    public async patch<T>(endpoint: string, body: any): Promise<T> {
+        return await this.request<T>(endpoint, 'PATCH', body);
     }
     
 }
