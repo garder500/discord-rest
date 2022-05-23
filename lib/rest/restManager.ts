@@ -15,8 +15,8 @@ export type optionForRequest = {
 
 export default class RestManager {
     private baseURL: string;
-    private token: string;
-    private version: number;
+    readonly token: string;
+    readonly version: number;
     private headers: optionForRequest["headers"];
 
     constructor(token: string, version : number=10) {

@@ -1,21 +1,37 @@
 {
-  "name": "discord-rest",
-  "version": "1.0.5",
-  "description": "A discord Rest Manager(API only)",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
-  "scripts": {
-    "test": "echo All right everything is fine"
-  },
-  "author": "",
-  "license": "MIT",
-  "dependencies": {  
-    "form-data": "^4.0.0",
-    "node-fetch": "^2.6.7"
-  },
-  "devDependencies": {
-    "@types/node-fetch": "^2.6.1",
-    "discord-api-types": "^0.33.0",
-    "typescript": "^4.6.4"
-  }
+    "name": "discord-rest",
+    "version": "1.0.5",
+    "description": "A discord Rest Manager(API only)",
+    "main": "src/index.js",
+    "types": "src/index.d.ts",
+    "scripts": {
+        "test": "echo All right everything is fine"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/garder500/discord-rest.git"
+    },
+    "keywords": [
+      "discord",
+      "api",
+      "bot",
+      "client",
+      "node",
+      "discordapp"
+    ],
+    "bugs": {
+      "url": "https://github.com/garder500/discord-rest/issues"
+    },
+    "homepage": "https://github.com/garder500/discord-rest",
+    "author": "garder500 <jeremy27.clara22@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "form-data": "^4.0.0",
+        "node-fetch": "^2.6.7"
+    },
+    "devDependencies": {
+        "@types/node-fetch": "^2.6.1",
+        "discord-api-types": "^0.33.0",
+        "typescript": "^4.6.4"
+    }
 }
