@@ -11,4 +11,6 @@ export default interface UserType {
     public_flags?:number;
     system?:boolean;
     created_at?:number;
+    banner_color?:string;
+    accent_color?:number;
 }

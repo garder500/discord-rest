@@ -1,0 +1,45 @@
+import * as api from "discord-api-types/v10";
+
+export default interface GuildType {
+    id:string;
+    name:string;
+    icon?:string| null;
+    iconHash?:string| null;
+    splash?:string| null;
+    discoverySplash?:string| null;
+    owner?:boolean| null;
+    ownerId:string;
+    permissions?:string| null;
+    region?:string| null;
+    afkChannelId?:string| null;
+    afkTimeout?:number| null;
+    widgetEnabled?:boolean| null;
+    widgetChannelId?:string| null;
+    verificationLevel:number;
+    defaultMessageNotifications:number;
+    explicitContentFilter:number;
+    roles:Array<api.APIRole>;
+    emojis:Array<Object>;
+    features:Array<string>;
+    mfaLevel:number;
+    applicationId?:string| null;
+    systemChannelId?:string| null;
+    systemChannelFlags?:number| null;
+    rulesChannelId?:string| null;
+    maxPresences?:number| null;
+    maxMembers?:number| null;
+    vanityUrlCode?:string| null;
+    description?:string| null;
+    banner?:string| null;
+    premiumTier:number;
+    premiumSubscriptionCount?:number| null;
+    preferredLocale?:string| null;
+    publicUpdatesChannelId?:string| null;
+    maxVideoChannelUsers?:number| null;
+    approximateMemberCount?:number| null;
+    approximatePresenceCount?:number | null;
+    welcomeScreen?:api.APIGuildWelcomeScreen | null;
+    nsfwLevel:number;
+    stickers?:Array<api.APISticker> | null;
+    premium_progress_bar_enabled:boolean;
+}

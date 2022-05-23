@@ -1,0 +1,1219 @@
+{
+    "id": 919356120466858000,
+    "name": "Bot Creator",
+    "icon": "a_fb7a4a8fb76ca89155183971a402d76f",
+    "splash": "1454daeb46152ef8ec91204014402304",
+    "discoverySplash": null,
+    "owner": false,
+    "ownerId": 243117191774470140,
+    "permissions": 4398046511103,
+    "region": "russia",
+    "afkChannelId": null,
+    "afkTimeout": 300,
+    "widgetEnabled": true,
+    "widgetChannelId": 926786915032772600,
+    "verificationLevel": 4,
+    "defaultMessageNotifications": 1,
+    "explicitContentFilter": 2,
+    "roles": [
+        {
+            "id": 919356120466858000,
+            "name": "@everyone",
+            "permissions": 831112940545,
+            "position": 0,
+            "color": 0,
+            "hoist": false,
+            "managed": false,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0
+        },
+        {
+            "id": 919356871876423700,
+            "name": "Server Booster",
+            "permissions": 1071698660929,
+            "position": 12,
+            "color": 16023551,
+            "hoist": true,
+            "managed": true,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0,
+            "tags": {
+                "premium_subscriber": null
+            }
+        },
+        {
+            "id": 919566514577879000,
+            "name": "Beta tester",
+            "permissions": 1071698529856,
+            "position": 9,
+            "color": 8202147,
+            "hoist": true,
+            "managed": false,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0
+        },
+        {
+            "id": 919566538112127000,
+            "name": "Creator",
+            "permissions": 1071698660937,
+            "position": 18,
+            "color": 14286926,
+            "hoist": true,
+            "managed": false,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0
+        },
+        {
+            "id": 921413459172814800,
+            "name": "Bot-Creator",
+            "permissions": 8,
+            "position": 21,
+            "color": 0,
+            "hoist": false,
+            "managed": true,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0,
+            "tags": {
+                "bot_id": 887163815194689500
+            }
+        },
+        {
+            "id": 926251150666235900,
+            "name": "Admin",
+            "permissions": 831112940553,
+            "position": 17,
+            "color": 2596351,
+            "hoist": true,
+            "managed": false,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0
+        },
+        {
+            "id": 926457884391403500,
+            "name": "Bots",
+            "permissions": 831112940553,
+            "position": 7,
+            "color": 0,
+            "hoist": true,
+            "managed": false,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0
+        },
+        {
+            "id": 926624038816723000,
+            "name": "Bot-Creator Manager",
+            "permissions": 8,
+            "position": 20,
+            "color": 0,
+            "hoist": false,
+            "managed": true,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0,
+            "tags": {
+                "bot_id": 926457443880431600
+            }
+        },
+        {
+            "id": 926787259473207300,
+            "name": "Member",
+            "permissions": 831112940544,
+            "position": 8,
+            "color": 2067276,
+            "hoist": true,
+            "managed": false,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0
+        },
+        {
+            "id": 931970244640129000,
+            "name": "Local Bot",
+            "permissions": 8,
+            "position": 6,
+            "color": 0,
+            "hoist": false,
+            "managed": true,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0,
+            "tags": {
+                "bot_id": 901492294560145500
+            }
+        },
+        {
+            "id": 934436231457177600,
+            "name": "Community Manager",
+            "permissions": 831113604097,
+            "position": 16,
+            "color": 11403519,
+            "hoist": true,
+            "managed": false,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0
+        },
+        {
+            "id": 946066831830044700,
+            "name": "Ko-fi Bot",
+            "permissions": 268435457,
+            "position": 22,
+            "color": 0,
+            "hoist": false,
+            "managed": true,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0,
+            "tags": {
+                "bot_id": 836232765942923300
+            }
+        },
+        {
+            "id": 946067271267262500,
+            "name": "Montly-donator",
+            "permissions": 831112940545,
+            "position": 11,
+            "color": 2123412,
+            "hoist": false,
+            "managed": false,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0
+        },
+        {
+            "id": 951110388387303400,
+            "name": "Marketing",
+            "permissions": 831112940545,
+            "position": 14,
+            "color": 16768322,
+            "hoist": true,
+            "managed": false,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0
+        },
+        {
+            "id": 951150945595711500,
+            "name": "Mod",
+            "permissions": 831112940545,
+            "position": 15,
+            "color": 48870,
+            "hoist": false,
+            "managed": false,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0
+        },
+        {
+            "id": 951151060607696900,
+            "name": "staff",
+            "permissions": 831112940545,
+            "position": 13,
+            "color": 0,
+            "hoist": false,
+            "managed": false,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0
+        },
+        {
+            "id": 952317318883573800,
+            "name": "Statbot",
+            "permissions": 270126169,
+            "position": 5,
+            "color": 0,
+            "hoist": false,
+            "managed": true,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0,
+            "tags": {
+                "bot_id": 491769129318088700
+            }
+        },
+        {
+            "id": 952564954458910800,
+            "name": "Invite Management",
+            "permissions": 347176,
+            "position": 4,
+            "color": 0,
+            "hoist": false,
+            "managed": true,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0,
+            "tags": {
+                "bot_id": 873934253468024800
+            }
+        },
+        {
+            "id": 955120358787252200,
+            "name": "Bot-Creator Security",
+            "permissions": 8,
+            "position": 3,
+            "color": 0,
+            "hoist": false,
+            "managed": true,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0,
+            "tags": {
+                "bot_id": 955118944774144100
+            }
+        },
+        {
+            "id": 955155617566314600,
+            "name": "GiveawayBot",
+            "permissions": 347200,
+            "position": 2,
+            "color": 0,
+            "hoist": false,
+            "managed": true,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0,
+            "tags": {
+                "bot_id": 294882584201003000
+            }
+        },
+        {
+            "id": 962986504039317500,
+            "name": "Alpha donator",
+            "permissions": 831112940545,
+            "position": 10,
+            "color": 16027,
+            "hoist": true,
+            "managed": false,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0
+        },
+        {
+            "id": 965749854716448900,
+            "name": "Last Management",
+            "permissions": 277025417216,
+            "position": 1,
+            "color": 0,
+            "hoist": false,
+            "managed": true,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0,
+            "tags": {
+                "bot_id": 964150672947834900
+            }
+        },
+        {
+            "id": 977691066612453400,
+            "name": "uTip",
+            "permissions": 268748864,
+            "position": 19,
+            "color": 0,
+            "hoist": false,
+            "managed": true,
+            "mentionable": false,
+            "icon": null,
+            "unicode_emoji": null,
+            "flags": 0,
+            "tags": {
+                "bot_id": 515573833462317060
+            }
+        }
+    ],
+    "emojis": [
+        {
+            "name": "3023iloveyou",
+            "roles": [],
+            "id": 926480133555097600,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "5372imsilly",
+            "roles": [],
+            "id": 926480134263935000,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "6657peepotoilet",
+            "roles": [],
+            "id": 926480134347833300,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "3308headdesk",
+            "roles": [],
+            "id": 926480135874576400,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "8979crazyeyes",
+            "roles": [],
+            "id": 926480136155566100,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "8712arrowright",
+            "roles": [],
+            "id": 926480136197513200,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "8020yes",
+            "roles": [],
+            "id": 926480136457552000,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "7110panda",
+            "roles": [],
+            "id": 926480138026233900,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "5992cerberusbap",
+            "roles": [],
+            "id": 926480142417686500,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "4679wumpusverysad",
+            "roles": [],
+            "id": 926480146012205000,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "3650pepesob",
+            "roles": [],
+            "id": 926480146440028200,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "9690pepeblanketrun",
+            "roles": [],
+            "id": 926480146687484000,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "3958canadabirb",
+            "roles": [],
+            "id": 926480147912200300,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "7066dissappearedlikeurdad",
+            "roles": [],
+            "id": 926480151460597800,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "9155dislike",
+            "roles": [],
+            "id": 926480151703863300,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "5213cat",
+            "roles": [],
+            "id": 926480157890474000,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "6162hamsterdj",
+            "roles": [],
+            "id": 926480160365117600,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "2622warn",
+            "roles": [],
+            "id": 926480162017648800,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "3145pepekraken",
+            "roles": [],
+            "id": 926480162021867500,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "9003demontime",
+            "roles": [],
+            "id": 926480162294480900,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "3124verifyblack",
+            "roles": [],
+            "id": 926480164416806900,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "3383rikafast",
+            "roles": [],
+            "id": 926480164660072600,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "4273picolick",
+            "roles": [],
+            "id": 926480166602035200,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "7624pepedance",
+            "roles": [],
+            "id": 926480166883033100,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "7294like",
+            "roles": [],
+            "id": 926480169533849700,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "5735exciteddd",
+            "roles": [],
+            "id": 926480169621913600,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "3871blush",
+            "roles": [],
+            "id": 926480173979824100,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "9393boobs",
+            "roles": [],
+            "id": 926480175464611800,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "8057throwtrash",
+            "roles": [],
+            "id": 926480176236331100,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "1907nitroboostinglevel",
+            "roles": [],
+            "id": 926480181407912000,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "3065youclown",
+            "roles": [],
+            "id": 926480181928030200,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "1730mhmyouright",
+            "roles": [],
+            "id": 926480182922084500,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "5887suicide",
+            "roles": [],
+            "id": 926480183861579900,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "8896verifyorange",
+            "roles": [],
+            "id": 926480183865782400,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "9851nellysnowballnana",
+            "roles": [],
+            "id": 926480184318779400,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "6598charmander",
+            "roles": [],
+            "id": 926480186550149100,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "7204snumpus",
+            "roles": [],
+            "id": 926480187305128000,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "8828nellysnowball2nana",
+            "roles": [],
+            "id": 926480187812642800,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "1403assslap",
+            "roles": [],
+            "id": 926480188198490100,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "4624uhhh",
+            "roles": [],
+            "id": 926480189272228000,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "2781disappointed",
+            "roles": [],
+            "id": 926480190828347400,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "2365peepocookie",
+            "roles": [],
+            "id": 926480191633629200,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "4451verifyred",
+            "roles": [],
+            "id": 926480194024390700,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "2531renahau",
+            "roles": [],
+            "id": 926480194892595200,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "6325squirtlehype",
+            "roles": [],
+            "id": 926480195664363500,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "9970verifyblue",
+            "roles": [],
+            "id": 926480196742283400,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "1847whythankyou",
+            "roles": [],
+            "id": 926480197576953900,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "8712starefingerwag",
+            "roles": [],
+            "id": 926480197686009900,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "4127bombed",
+            "roles": [],
+            "id": 926480197946077200,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "1615gasp",
+            "roles": [],
+            "id": 926480199078518800,
+            "require_colons": true,
+            "managed": false,
+            "animated": true,
+            "available": true
+        },
+        {
+            "name": "pepega",
+            "roles": [],
+            "id": 926498684659708000,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 668141658088669200,
+            "roles": [],
+            "id": 926499309829124100,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 668142601395896300,
+            "roles": [],
+            "id": 926499327424229400,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 668142693599150100,
+            "roles": [],
+            "id": 926499348731269100,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 884572129008427000,
+            "roles": [],
+            "id": 926499367463043100,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 900513200422936600,
+            "roles": [],
+            "id": 926499398005981200,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 785517292837404800,
+            "roles": [],
+            "id": 926500290985852900,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 785542676111687700,
+            "roles": [],
+            "id": 926500305531707400,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 785845362237112300,
+            "roles": [],
+            "id": 926500317007323100,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "pepef",
+            "roles": [],
+            "id": 926500325886664700,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 814561541579735000,
+            "roles": [],
+            "id": 926500339316846600,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "kek",
+            "roles": [],
+            "id": 926500359776653300,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 8933788169390326000,
+            "roles": [],
+            "id": 926500581252677600,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "astolfosleep",
+            "roles": [],
+            "id": 926500599304945700,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "kanacute",
+            "roles": [],
+            "id": 926500615666950100,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "weed",
+            "roles": [],
+            "id": 926502144666923000,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "__",
+            "roles": [],
+            "id": 926502157715382300,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "hehe",
+            "roles": [],
+            "id": 926502172559024100,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 830421871651717100,
+            "roles": [],
+            "id": 926502185989197800,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 785845362237112300,
+            "roles": [],
+            "id": 926502245124689900,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 785292793878806500,
+            "roles": [],
+            "id": 926502283703906400,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 785292751910469600,
+            "roles": [],
+            "id": 926502299612905500,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "necoarchorni",
+            "roles": [],
+            "id": 926502324430594000,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "blush",
+            "roles": [],
+            "id": 926502745320620000,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 858173090806366200,
+            "roles": [],
+            "id": 926502825876414500,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "pepeban",
+            "roles": [],
+            "id": 926502867089653900,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "stare",
+            "roles": [],
+            "id": 926502908583870600,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "kanasus",
+            "roles": [],
+            "id": 926502949625155700,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "simp",
+            "roles": [],
+            "id": 926503077157163000,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 860414736139026400,
+            "roles": [],
+            "id": 926503097616982100,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "poggerssss",
+            "roles": [],
+            "id": 926503135835488300,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "pepecross",
+            "roles": [],
+            "id": 926503158459547800,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "pepescared",
+            "roles": [],
+            "id": 926503181473693700,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "pepeshoot",
+            "roles": [],
+            "id": 926503200767508500,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "ppdoc",
+            "roles": [],
+            "id": 926503218786226200,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "bbthonk",
+            "roles": [],
+            "id": 926503591362064400,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "ewwtf",
+            "roles": [],
+            "id": 926504205349437400,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "npc",
+            "roles": [],
+            "id": 926504225872171000,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "gays",
+            "roles": [],
+            "id": 926504241881821200,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "pepeyikes",
+            "roles": [],
+            "id": 926504255790145700,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "deadeyes",
+            "roles": [],
+            "id": 926504274031169500,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "kanakms",
+            "roles": [],
+            "id": 926505872472019100,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": 929443191659311100,
+            "roles": [],
+            "id": 955128639404527600,
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        }
+    ],
+    "features": [
+        "MEMBER_VERIFICATION_GATE_ENABLED",
+        "INVITE_SPLASH",
+        "PREVIEW_ENABLED",
+        "WELCOME_SCREEN_ENABLED",
+        "NEWS",
+        "THREE_DAY_THREAD_ARCHIVE",
+        "COMMUNITY",
+        "ANIMATED_ICON"
+    ],
+    "mfaLevel": 1,
+    "applicationId": null,
+    "systemChannelId": 936586873747427300,
+    "systemChannelFlags": 9,
+    "rulesChannelId": 919356121603530900,
+    "maxPresences": null,
+    "maxMembers": 500000,
+    "vanityUrlCode": null,
+    "description": "Bot-Creator is a server, for the website https://bot-creator.com Make Your Own Bot using Bot-Creator !",
+    "banner": null,
+    "premiumTier": 1,
+    "premiumSubscriptionCount": 2,
+    "preferredLocale": "fr",
+    "publicUpdatesChannelId": 926457627523821600,
+    "maxVideoChannelUsers": 25,
+    "nsfwLevel": 0,
+    "stickers": [],
+    "premium_progress_bar_enabled": true
+}
