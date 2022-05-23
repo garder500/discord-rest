@@ -1,6 +1,6 @@
 {
   "name": "discord-rest",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A discord Rest Manager(API only)",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -8,14 +8,14 @@
     "test": "echo All right everything is fine"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@types/node-fetch": "^2.6.1",
-    "discord-api-types": "^0.33.0",
+  "license": "MIT",
+  "dependencies": {  
     "form-data": "^4.0.0",
     "node-fetch": "^2.6.7"
   },
   "devDependencies": {
+    "@types/node-fetch": "^2.6.1",
+    "discord-api-types": "^0.33.0",
     "typescript": "^4.6.4"
   }
 }
