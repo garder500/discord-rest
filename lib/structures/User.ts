@@ -5,9 +5,9 @@ import { Base } from "./Base";
 import { Channel } from "./Channel";
 /**
  * User class.
+ * @link https://discord.com/developers/docs/resources/user
  * @category Structure
  * @extends Base
- * @property {UserType} interface - The user interface.
  * @example
  * ```js
  * const user = new User(client,{
@@ -122,7 +122,17 @@ export class User extends Base {
         }
     }
 
-    getBannerURL(banner: { size: number, format: string, dynamic: boolean } = { size: 2048, format: "png", dynamic: true }) {
+    /**
+     * Get the user Banner URL.
+     * @param {AvatarFormat} [banner] The format of the banner.
+     * @returns {string} The banner URL.
+     * @example
+     * ```js
+     * const bannerURL = user.getBannerURL();
+     * ```
+     */
+
+    getBannerURL(banner: AvatarFormat = { size: 2048, format: "png", dynamic: true }) {
         // check if the user has a default banner
         if (this.banner === undefined || this.banner === null) {
             return null;

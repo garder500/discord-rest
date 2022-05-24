@@ -5,9 +5,9 @@ import { Channel } from './Channel';
 import { ChannelType } from '../types/ChannelType';
 /**
  * Guild class.
+ * @link https://discord.com/developers/docs/resources/guild#guild-object
  * @category Structure
  * @extends Base
- * @property {APIGuild} interface - The guild interface.
  * @example
  * ```js
  * const guild = new Guild(client,{
@@ -108,7 +108,7 @@ export class Guild extends Base {
     }
     /**
      * Get all channels in the guild.
-     * @returns {Promise<Array<Channel>>}
+     * @returns {Promise<Channel[]>} The guild's channels.
      * @example
      * ```js
      * guild.getChannels().then(channels => {
@@ -131,7 +131,7 @@ export class Guild extends Base {
      * @example
      * ```js
      * guild.delete().then(() => {
-     * console.log('Guild deleted.');
+     *  console.log('Guild deleted.');
      * });
      */
     async delete(): Promise<null> {

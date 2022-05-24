@@ -9,7 +9,6 @@ import { GuildController } from "../controller/GuildController";
 /**
  * Client class.
  * @category Structure
- * @property {ClientType} interface - The client interface.
  * @example
  * ```js
  * const client = new Client({

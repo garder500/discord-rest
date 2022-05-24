@@ -7,9 +7,9 @@ import { Message } from "./Message";
 
 /**
  * Channel class.
+ * @link https://discord.com/developers/docs/resources/channel#channel-object
  * @category Structure
  * @extends Base
- * @property {ChannelType} interface - The channel interface.
  * @example
  * ```js
  * const channel = new Channel(client,{
@@ -142,7 +142,7 @@ export class Channel extends Base {
     /** 
      * Send a message to the channel.
      * @param {string|MessageType} [corp] - The message content. 
-     * @returns {Promise<Message>}
+     * @returns {Promise<Message>} The message object.
      * @example
      * ```js
      * channel.send("Hello World!");

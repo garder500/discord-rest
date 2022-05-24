@@ -6,10 +6,10 @@ import { Channel } from './Channel';
 import { Client } from './Client';
 import { Guild } from './Guild';
 /**
- * Message class.
+ * Message class. 
+ * @link https://discord.com/developers/docs/resources/channel#message-object
  * @category Structure
  * @extends Base
- * @property {MessageType} interface - The message interface.
  * @example
  * ```js
  * const message = new Message(client,{
