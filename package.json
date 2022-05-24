@@ -5,7 +5,8 @@
     "main": "src/index.js",
     "types": "src/index.d.ts",
     "scripts": {
-        "test": "echo All right everything is fine"
+        "test": "echo All right everything is fine",
+        "lint": "eslint ."
     },
     "repository": {
         "type": "git",
