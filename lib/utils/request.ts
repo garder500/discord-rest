@@ -1,12 +1,8 @@
-import currentFetch from "node-fetch";
+import currentFetch, { RequestInit as RequestFetch, Response } from "node-fetch";
 
-let fetcher = (url: string, options: any) => {
-    if(typeof window !== 'undefined'){
-        return window.fetch(url, options);
-    }else{
-        return currentFetch(url, options);
-    }
-}
+const fetch = (url: string, options: RequestFetch): Promise<Response> =>{
+    return currentFetch(url, options);
+};
 
 
-export default fetcher;
+export default fetch;

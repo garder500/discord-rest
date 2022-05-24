@@ -27,7 +27,7 @@ export class Client {
     constructor(options: ClientType){
         this.token = options.token;
         this.version = options.version || 10;
-        let rest = new RestManager(this.token, this.version);
+        const rest = new RestManager(this.token, this.version);
         this.rest = rest;
         let user: UserType;
         this.users = new UserController(this);

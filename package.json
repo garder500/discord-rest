@@ -22,7 +22,7 @@
     "bugs": {
         "url": "https://github.com/garder500/discord-rest/issues"
     },
-    "homepage": "https://garder500.github.io/discord-rest",
+    "homepage": "https://discord-rest.js.org",
     "author": "garder500 <jeremy27.clara22@gmail.com>",
     "license": "MIT",
     "dependencies": {
@@ -31,7 +31,10 @@
     },
     "devDependencies": {
         "@types/node-fetch": "^2.6.1",
+        "@typescript-eslint/eslint-plugin": "^5.26.0",
+        "@typescript-eslint/parser": "^5.26.0",
         "discord-api-types": "^0.33.0",
+        "eslint": "^8.16.0",
         "typedoc": "^0.22.15",
         "typescript": "^4.6.4"
     }

@@ -21,4 +21,4 @@ Support is also planned soon for oauth2.
 
 ## Go to the documentation
 
-[Documentation](https://garder500.github.io/discord-rest)
+[Documentation](https://discord-rest.js.org)

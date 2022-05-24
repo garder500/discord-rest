@@ -1,4 +1,4 @@
-import { ChannelType } from '../types/ChannelType';
+import { APIGuildMember } from 'discord-api-types/v10';
 import { attachmentsType, EmbedType, MessageType, ReactionsType } from '../types/MessageType';
 import { UserType } from '../types/UserType';
 import { Base } from './Base';
@@ -46,7 +46,7 @@ export class Message extends Base{
     channel_id?: string;
     guild_id?: string;
     author?: UserType;
-    member?: any;
+    member?: APIGuildMember;
     content?: string;
     timestamp?: string;
     edited_timestamp?: string;

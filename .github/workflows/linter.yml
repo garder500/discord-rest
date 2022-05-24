@@ -1,0 +1,39 @@
+
+name: Lint Code Base
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ master ]
+    
+jobs:
+  linter:
+    name: Linting
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: npm ci
+    - name: Run ESLint
+      run: npm run lint
+  
+  build:
+    name: Building typescript project to test
+    runs-on: ubuntu-latest
+    needs: [ linter ]
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - name: Get files
+      uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install packages
+      run: npm ci
+    - name: Build TSC
+      run: tsc --build

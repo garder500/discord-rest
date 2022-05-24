@@ -1,8 +1,8 @@
 import { Client } from "./Client";
 import { ChannelType } from "../types/ChannelType";
 import { UserType, AvatarFormat } from "../types/UserType";
-import { Base } from "./Base";
-import { Channel } from "./Channel";
+import{ Base } from "./Base";
+import{ Channel } from "./Channel";
 /**
  * User class.
  * @link https://discord.com/developers/docs/resources/user
@@ -51,7 +51,7 @@ export class User extends Base {
         this.premium_type = user.premium_type;
         this.public_flags = user.public_flags;
         this.created_at = Number((BigInt(user.id) >> 22n) + 1420070400000n);
-    };
+    }
     /**
      * Make a DM with the current user.
      * @returns {Promise<Channel>} The DM channel.
@@ -61,7 +61,7 @@ export class User extends Base {
      * ```
      */
     async createDM(): Promise<Channel> {
-        let channel = await this.client.rest.post<ChannelType>(`users/@me/channels`, {
+        const channel = await this.client.rest.post<ChannelType>(`users/@me/channels`, {
             recipient_id: this.id
         });
         return new Channel(this.client,channel);
@@ -78,7 +78,7 @@ export class User extends Base {
      */
     async getDMChannels(): Promise<Channel[]> {
         if(super.client && super.client.user && super.client.user.id == this.id){
-        let response = await this.client.rest.get<ChannelType[]>(`users/@me/channels`);
+        const response = await this.client.rest.get<ChannelType[]>(`users/@me/channels`);
             return response.map(channel => new Channel(this.client, channel));
         }else{
             throw new Error("You can't get a DM channel with someone else");
@@ -108,7 +108,7 @@ export class User extends Base {
                 }
             } else {
                 // check supported formats
-                let formats = ["png", "jpeg", "webp", "gif"];
+                const formats = ["png", "jpeg", "webp", "gif"];
                 if (avatar.format && formats.includes(avatar.format)) {
                     if (avatar.size) {
                         return `https://cdn.discordapp.com/avatars/${this.id}/${this.avatar}.${avatar.format}?size=${avatar.size}`;
@@ -146,7 +146,7 @@ export class User extends Base {
                 }
             }else{
                 // check supported formats
-                let formats = ["png", "jpeg", "webp", "gif"];
+                const formats = ["png", "jpeg", "webp", "gif"];
                 if (banner.format && formats.includes(banner.format)) {
                     if (banner.size) {
                         return `https://cdn.discordapp.com/banners/${this.id}/${this.banner}.${banner.format}?size=${banner.size}`;

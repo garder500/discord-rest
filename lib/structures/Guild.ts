@@ -1,6 +1,6 @@
 import { Client } from './Client';
 import { Base } from './Base';
-import { APIGuild, APIGuildWelcomeScreen, APIRole, APISticker } from 'discord-api-types/v10';
+import { APIEmoji, APIGuild, APIGuildWelcomeScreen, APIRole, APISticker } from 'discord-api-types/v10';
 import { Channel } from './Channel';
 import { ChannelType } from '../types/ChannelType';
 /**
@@ -39,7 +39,7 @@ export class Guild extends Base {
     defaultMessageNotifications:number;
     explicitContentFilter:number;
     roles:Array<APIRole>;
-    emojis:Array<Object>;
+    emojis:Array<APIEmoji>;
     features:Array<string>;
     mfaLevel:number;
     applicationId?:string| null;

@@ -1,4 +1,5 @@
 import { UserType } from "./UserType";
+import { APIGuildMember} from "discord-api-types/v10";
 
 export interface MessageType {
     // https://discord.com/developers/docs/resources/channel#message-object-message-types
@@ -7,7 +8,7 @@ export interface MessageType {
     channel_id?: string;
     guild_id?: string;
     author?: UserType;
-    member?: any;
+    member?: APIGuildMember;
     content?: string;
     timestamp?: string;
     edited_timestamp?: string;
