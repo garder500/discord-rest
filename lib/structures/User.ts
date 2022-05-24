@@ -1,8 +1,25 @@
 import { Client } from "./Client";
 import { ChannelType } from "../types/ChannelType";
-import { UserType } from "../types/UserType";
+import { UserType, AvatarFormat } from "../types/UserType";
 import { Base } from "./Base";
 import { Channel } from "./Channel";
+/**
+ * User class.
+ * @category Structure
+ * @extends Base
+ * @property {UserType} interface - The user interface.
+ * @example
+ * ```js
+ * const user = new User(client,{
+ *  id: '123',
+ *  username: 'test',
+ *  discriminator: '1234',
+ *  avatar: '123',
+ *  bot: false,
+ *  system: false,
+ * })
+ * ```
+ */
 export class User extends Base {
     username: string;
     created_at: number;
@@ -35,24 +52,49 @@ export class User extends Base {
         this.public_flags = user.public_flags;
         this.created_at = Number((BigInt(user.id) >> 22n) + 1420070400000n);
     };
-
-    async createDM() {
+    /**
+     * Make a DM with the current user.
+     * @returns {Promise<Channel>} The DM channel.
+     * @example
+     * ```js
+     * const channel = await user.createDM();
+     * ```
+     */
+    async createDM(): Promise<Channel> {
         let channel = await this.client.rest.post<ChannelType>(`users/@me/channels`, {
             recipient_id: this.id
         });
         return new Channel(this.client,channel);
     }
 
-    async getDMChannel() {
+    /**
+     * Get all dm of the Bot.
+     * This endpoint is only available for bots.
+     * @returns {Promise<Channel[]>} The dm channels.
+     * @example
+     * ```js
+     * const dms = await user.getDMChannels();
+     * ```
+     */
+    async getDMChannels(): Promise<Channel[]> {
         if(super.client && super.client.user && super.client.user.id == this.id){
-        let response = await this.client.rest.get<ChannelType>(`users/@me/channels`);
-            return new Channel(this.client,response);
+        let response = await this.client.rest.get<ChannelType[]>(`users/@me/channels`);
+            return response.map(channel => new Channel(this.client, channel));
         }else{
             throw new Error("You can't get a DM channel with someone else");
         }
     }
 
-    getAvatarURL(avatar: { size: number, format: string, dynamic: boolean } = { size: 2048, format: "png", dynamic: true }) {
+    /**
+     * Get the user's avatar URL.
+     * @param {AvatarFormat} [avatar] The format of the avatar.
+     * @returns {string} The avatar URL.
+     * @example
+     * ```js
+     * const avatarURL = user.getAvatarURL();
+     * ```
+     */
+    getAvatarURL(avatar:AvatarFormat  = { size: 2048, format: "png", dynamic: true }) {
         // check if the user has a default avatar
         if (this.avatar === undefined || this.avatar === null) {
             return `https://cdn.discordapp.com/embed/avatars/${this.discriminator % 5}.png`;

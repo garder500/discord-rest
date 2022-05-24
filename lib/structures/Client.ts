@@ -6,6 +6,17 @@ import { UserController } from "../controller/UserController";
 import { ChannelController } from "../controller/ChannelController";
 import { GuildController } from "../controller/GuildController";
 
+/**
+ * Client class.
+ * @category Structure
+ * @property {ClientType} interface - The client interface.
+ * @example
+ * ```js
+ * const client = new Client({
+ *    token: "token"
+ * });
+ * ```
+ */
 export class Client {
     token: string;
     version: number | undefined;

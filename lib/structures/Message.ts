@@ -5,7 +5,41 @@ import { Base } from './Base';
 import { Channel } from './Channel';
 import { Client } from './Client';
 import { Guild } from './Guild';
-
+/**
+ * Message class.
+ * @category Structure
+ * @extends Base
+ * @property {MessageType} interface - The message interface.
+ * @example
+ * ```js
+ * const message = new Message(client,{
+ *  id: '123',
+ *  channel_id: '123',
+ *  guild_id: '123',
+ *  author: {
+ *      id: '123',
+ *      username: 'test',
+ *      discriminator: '1234',
+ *      avatar: '123',
+ *      bot: false,
+ *      system: false,
+ *  },
+ *  content: 'test',
+ *  timestamp: 123,
+ *  edited_timestamp: 123,
+ *  tts: false,
+ *  mention_everyone: false,
+ *  mentions: [],
+ *  mention_roles: [],
+ *  attachments: [],
+ *  embeds: [],
+ *  reactions: [],
+ *  nonce: '123',
+ *  pinned: false,
+ *  webhook_id: '123',
+ * })
+ * ```
+ */
 export class Message extends Base{
     id?: string;
     type?: string;
@@ -48,6 +82,15 @@ export class Message extends Base{
         this.pinned = message.pinned;
         this.webhook_id = message.webhook_id;
     }
+    /**
+     * Get the channel the message was sent in.
+     * @returns {Promise<Channel>} A Channel promise.
+     * @example
+     * ```js
+     * const channel = await message.getChannel();
+     * console.log(channel.name);
+     * ```
+     */
     async getChannel(): Promise<Channel | null>{
         if(this.channel_id){
         return this.client.channels.fetch(this.channel_id);
@@ -55,7 +98,15 @@ export class Message extends Base{
             return null;
         }
     }
-
+    /**
+     * Get the guild the message was sent in.
+     * @return {Promise<Guild>} A Guild promise.
+     * @example
+     * ```js
+     * const guild = await message.getGuild();
+     * console.log(guild.name);
+     * ```
+     */
     async getGuild(): Promise<Guild | null>{
         if(this.guild_id){
         return this.client.guilds.fetch(this.guild_id);

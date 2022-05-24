@@ -14,3 +14,9 @@ export interface UserType {
     banner_color?:string;
     accent_color?:number;
 }
+
+export interface AvatarFormat { 
+    size?: number, 
+    format?: string, 
+    dynamic?: boolean 
+}

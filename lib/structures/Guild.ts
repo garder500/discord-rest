@@ -3,7 +3,23 @@ import { Base } from './Base';
 import { APIGuild, APIGuildWelcomeScreen, APIRole, APISticker } from 'discord-api-types/v10';
 import { Channel } from './Channel';
 import { ChannelType } from '../types/ChannelType';
-
+/**
+ * Guild class.
+ * @category Structure
+ * @extends Base
+ * @property {APIGuild} interface - The guild interface.
+ * @example
+ * ```js
+ * const guild = new Guild(client,{
+ * id: '123',
+ * name: 'test',
+ * icon: '123',
+ * splash: '123',
+ * owner_id: '123',
+ * region: '123',
+ * })
+ * ```
+ */
 export class Guild extends Base {
     id:string;
     name:string;
@@ -90,7 +106,15 @@ export class Guild extends Base {
         this.stickers = data.stickers;
         this.premium_progress_bar_enabled = data.premium_progress_bar_enabled;
     }
-    
+    /**
+     * Get all channels in the guild.
+     * @returns {Promise<Array<Channel>>}
+     * @example
+     * ```js
+     * guild.getChannels().then(channels => {
+     *  console.log(channels);
+     * });
+     */
     async getChannels(): Promise<Channel[]> {
         return new Promise<Channel[]>((resolve, reject) => {
             this.client.rest.get<ChannelType[]>(`guilds/${this.id}/channels`).then((channels) => {
@@ -101,16 +125,44 @@ export class Guild extends Base {
         });
     } 
 
-    async delete(): Promise<void> {
-        return new Promise<void>((resolve, reject) => {
+    /**
+     * Delete the current guild.
+     * @returns {Promise<null>} An empty promise.
+     * @example
+     * ```js
+     * guild.delete().then(() => {
+     * console.log('Guild deleted.');
+     * });
+     */
+    async delete(): Promise<null> {
+        return new Promise<null>((resolve, reject) => {
             this.client.rest.delete<null>(`guilds/${this.id}`).then(() => {
-                resolve();
+                resolve(null);
             }).catch(err => {
                 reject(err);
             });
         });
     }
+    
 
+    /**
+     * Edit the current guild.
+     * @param {APIGuild} [options] The guild settings to edit.
+     * @returns {Promise<Guild>}
+     * @example
+     * ```js
+     * guild.edit({
+     *  name: 'Discord API',
+     *  region: 'us-west',
+     *  verificationLevel: 3,
+     *  defaultMessageNotifications: 1,
+     *  explicitContentFilter: 2,
+     *  afkChannelId: '123456789012345678',
+     * }).then(guild => {
+     *  console.log(guild.name);
+     *  //expected output => 'Discord API' 
+     * });
+     */
     async edit(options: APIGuild): Promise<Guild> {
         return new Promise<Guild>((resolve, reject) => {
             this.client.rest.patch<APIGuild>(`guilds/${this.id}`, options).then((data) => {
@@ -121,6 +173,14 @@ export class Guild extends Base {
         });
     }
 
+    /**
+     * Get the JSON representation of the guild.
+     * @returns Current guild into a JSON object.
+     * @example
+     * ```js
+     * guild.toJSON();
+     * ```
+     */
     toJSON(){
         return {
             id: this.id,

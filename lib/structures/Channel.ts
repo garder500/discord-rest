@@ -5,6 +5,21 @@ import { ChannelType, PermissionOverwrite, ChannelEnum} from "../types/ChannelT
 import { MessageType } from "../types/MessageType";
 import { Message } from "./Message";
 
+/**
+ * Channel class.
+ * @category Structure
+ * @extends Base
+ * @property {ChannelType} interface - The channel interface.
+ * @example
+ * ```js
+ * const channel = new Channel(client,{
+ * id: '123',
+ * name: 'test',
+ * type: ChannelType.GUILD_TEXT,
+ * guild_id: '123',
+ * position: 1,
+ * }
+ */
 export class Channel extends Base {
     // add properties here
     id: string;
@@ -124,6 +139,15 @@ export class Channel extends Base {
         }
     }
 
+    /** 
+     * Send a message to the channel.
+     * @param {string|MessageType} [corp] - The message content. 
+     * @returns {Promise<Message>}
+     * @example
+     * ```js
+     * channel.send("Hello World!");
+     * ```
+     */
     async send(corp: string | MessageType): Promise<Message> {
         let content: MessageType; 
         if(typeof corp === "string"){
