@@ -2,7 +2,7 @@
 
 This module provides a Coverage of the REST API of the Discord API in Node.js. 
 
-[![publish](https://github.com/garder500/discord-rest/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/garder500/discord-rest/actions/workflows/npm-publish.yml)
+[![publish](https://github.com/garder500/discord-rest/actions/workflows/docs-generator.yml/badge.svg)](https://github.com/garder500/discord-rest/actions/workflows/npm-publish.yml)
 <span class="badge-npmversion"><a href="https://npmjs.org/package/discord-rest" title="View this project on NPM"><img src="https://img.shields.io/npm/v/discord-rest.svg" alt="NPM version" /></a></span>
 <span class="badge-npmdownloads"><a href="https://npmjs.org/package/discord-rest" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/discord-rest.svg" alt="NPM downloads" /></a></span>
 <br class="badge-separator" />
@@ -12,90 +12,13 @@ This module provides a Coverage of the REST API of the Discord API in Node.js.
 Discord-rest is a wrapper for the Discord REST API, in usage on Discord Slash Commands, Webhooks, and more.
 Support is also planned soon for oauth2.
 
-## Things to know
+## Thing to know
 
 - Discord-rest is not a library similar to Discord.js, you can't connect a bot with it.
 - Discord-rest is made for WebSite backends, and Webhooks endpoints for slash commands.
 - You can't use in the browser, but you can use it in Node.js with the [`node-fetch`](https://npmjs.com/package/node-fetch) module or with the window.fetch() function in some React environments that expose it.
 - Discord-rest don't have a cache system, because it's not used for a long time usage. 
 
-## Installation
+## Go to the documentation
 
-with [npm](https://npmjs.org/):
-
-```sh
-npm install discord-rest
-```
-
-with [yarn](https://yarnpkg.com/):
-
-```sh
-yarn add discord-rest
-```
-
-## Usage
-
-In TypeScript:
-
-```ts
-import Client from 'discord-rest';
-
-const client = new Client({ token: 'token' });
-```
-
-In Javascript:
-
-```js
-const Client = require('discord-rest');
-
-const client = new Client({ token: 'token' });
-```
-
-### API
-
-All methods in the Client class are static and provide access to alls Discord REST API endpoints.
-
-#### Client
-
-| Property | Description | Type |
-|----------|-------------|------|
-| `users` | Get current User by  | `UserController` |
-| `channels` | This help you to get a channel by is ID | `ChannelController` |
-| `user` | Get current User  | `User` |
-| `rest` | Get the REST API client | `RESTManager` |
-
-### Structure class
-
-#### User
-
-> createDM()
-
-make a DM Channel with the current User properties. (Bot must be in the same server as the User)
-
-> Example:
-
-```js
-client.users.get("243117191774470146").then(user => {
-    user.createDM().then(dm => {
-        console.log(dm);
-    }).catch(console.error);
-}).catch(console.error);
-```
-> DM is a Channel object 
-#### Channel
-
-> send()
-
-Send a message to the current Channel. (Bot must be in the same server as the Channel and have the right permissions)
-
-> Example:
-
-```js
-client.channels.get("243117191774470146").then(channel => {
-    channel.send("Hello World!").then(message => {
-        console.log(message);
-    }).catch(console.error);
-}).catch(console.error);
-```
-
-> Message is a Message Type, the object returned by the API.
+[Documentation](https://discord-rest.js.org/)

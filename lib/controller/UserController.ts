@@ -1,8 +1,8 @@
-import { Client } from "../index";
-import UserType from "../types/UserType";
-import User from "../structures/User";
+import { Client } from "../structures/Client";
+import { UserType } from "../types/UserType";
+import { User } from "../structures/User";
 
-export default class UserController {
+export class UserController {
     client: Client;
     constructor(client: Client) {
         this.client = client;

@@ -1,4 +1,4 @@
-export default interface ClientType {
+export interface ClientType {
     token: string;
     version?: number;
 }

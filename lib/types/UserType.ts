@@ -1,4 +1,4 @@
-export default interface UserType {
+export interface UserType {
     id:string;
     username:string;
     discriminator:number;

@@ -14,7 +14,7 @@ export type optionForRequest = {
     body?: any,
 }
 
-export default class RestManager {
+export class RestManager {
     private baseURL: string;
     readonly token: string;
     readonly version: number;

@@ -1,6 +1,6 @@
-import User from "../structures/User";
+import { User } from "../structures/User";
 
-export default interface ChannelType {
+export interface ChannelType {
     // https://discord.com/developers/docs/resources/channel#channel-object-channel-types
     id: string;
     type: number;

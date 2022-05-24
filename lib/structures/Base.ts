@@ -1,6 +1,6 @@
-import { Client } from "../index";
+import { Client } from "./Client";
 
-export default class Base {
+export class Base {
     client: Client;
     constructor(client: Client){
         this.client = client;

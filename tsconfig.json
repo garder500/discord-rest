@@ -23,5 +23,11 @@
     "declarationMap": false,
     "skipLibCheck": false,
     "esModuleInterop": true,
-  }
+  },
+  "typedocOptions": {
+    "entryPoints": ["lib/index.ts"],
+    "entryPointStrategy":"expand",
+    "name": "discord-rest",
+    "out": "docs"
+  },
 }

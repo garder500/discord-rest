@@ -1,6 +1,6 @@
-import UserType from "./UserType";
+import { UserType } from "./UserType";
 
-export default interface MessageType {
+export interface MessageType {
     // https://discord.com/developers/docs/resources/channel#message-object-message-types
     id?: string;
     type?: string;

@@ -1,9 +1,8 @@
-import { Client } from '../index';
-import Base from './Base';
-import GuildType from '../types/GuildType';
+import { Client } from './Client';
+import { Base } from './Base';
 import { APIGuild, APIGuildWelcomeScreen, APIRole, APISticker } from 'discord-api-types/v10';
 
-export default class Guild extends Base {
+export class Guild extends Base {
     id:string;
     name:string;
     icon?:string| null;
@@ -45,52 +44,8 @@ export default class Guild extends Base {
     nsfwLevel:number;
     stickers?:Array<APISticker> | null;
     premium_progress_bar_enabled:boolean;
-    constructor(client: Client, data: GuildType ) {
+    constructor(client: Client, data: APIGuild ) {
         super(client);
-        this.id = data.id;
-        this.name = data.name;
-        this.icon = data.icon;
-        this.iconHash = data.iconHash;
-        this.splash = data.splash;
-        this.discoverySplash = data.discoverySplash;
-        this.owner = data.owner;
-        this.ownerId = data.ownerId;
-        this.permissions = data.permissions;
-        this.region = data.region;
-        this.afkChannelId = data.afkChannelId;
-        this.afkTimeout = data.afkTimeout;
-        this.widgetEnabled = data.widgetEnabled;
-        this.widgetChannelId = data.widgetChannelId;
-        this.verificationLevel = data.verificationLevel;
-        this.defaultMessageNotifications = data.defaultMessageNotifications;
-        this.explicitContentFilter = data.explicitContentFilter;
-        this.roles = data.roles;
-        this.emojis = data.emojis;
-        this.features = data.features;
-        this.mfaLevel = data.mfaLevel;
-        this.applicationId = data.applicationId;
-        this.systemChannelId = data.systemChannelId;
-        this.systemChannelFlags = data.systemChannelFlags;
-        this.rulesChannelId = data.rulesChannelId;
-        this.maxPresences = data.maxPresences;
-        this.maxMembers = data.maxMembers;
-        this.vanityUrlCode = data.vanityUrlCode;
-        this.description = data.description;
-        this.banner = data.banner;
-        this.premiumTier = data.premiumTier;
-        this.premiumSubscriptionCount = data.premiumSubscriptionCount;
-        this.preferredLocale = data.preferredLocale;
-        this.publicUpdatesChannelId = data.publicUpdatesChannelId;
-        this.maxVideoChannelUsers = data.maxVideoChannelUsers;
-        this.approximateMemberCount = data.approximateMemberCount;
-        this.approximatePresenceCount = data.approximatePresenceCount;
-        this.welcomeScreen = data.welcomeScreen;
-        this.nsfwLevel = data.nsfwLevel;
-        this.stickers = data.stickers;
-        this.premium_progress_bar_enabled = data.premium_progress_bar_enabled;
-    }
-
-    resolver(data: APIGuild ){
         this.id = data.id;
         this.name = data.name;
         this.icon = data.icon ;

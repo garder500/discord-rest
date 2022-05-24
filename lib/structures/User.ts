@@ -1,9 +1,9 @@
-import { Client } from "../index";
-import ChannelType from "../types/ChannelType";
-import UserType from "../types/UserType";
-import Base from "./Base";
-import Channel from "./Channel";
-export default class User extends Base {
+import { Client } from "./Client";
+import { ChannelType } from "../types/ChannelType";
+import { UserType } from "../types/UserType";
+import { Base } from "./Base";
+import { Channel } from "./Channel";
+export class User extends Base {
     username: string;
     created_at: number;
     public_flags: number | undefined;

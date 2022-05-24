@@ -1,12 +1,10 @@
-// Make a class from the discord API Channel
-// Language: typescript
-import Base from "./Base";
-import { Client } from "../index";
-import User from "./User";
-import ChannelType, { PermissionOverwrite, ChannelEnum} from "../types/ChannelType";
-import MessageType from "../types/MessageType";
+import { Base } from "./Base";
+import { Client } from "./Client";
+import { User }from "./User";
+import { ChannelType, PermissionOverwrite, ChannelEnum} from "../types/ChannelType";
+import { MessageType } from "../types/MessageType";
 
-export default class Channel extends Base {
+export class Channel extends Base {
     // add properties here
     id: string;
     type: number | string;
