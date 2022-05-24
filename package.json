@@ -1,6 +1,6 @@
 {
     "name": "discord-rest",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "A discord Rest Manager(API only)",
     "main": "src/index.js",
     "types": "src/index.d.ts",
@@ -22,7 +22,7 @@
     "bugs": {
         "url": "https://github.com/garder500/discord-rest/issues"
     },
-    "homepage": "https://disco-rest.js.org",
+    "homepage": "https://garder500.github.io/discord-rest",
     "author": "garder500 <jeremy27.clara22@gmail.com>",
     "license": "MIT",
     "dependencies": {
