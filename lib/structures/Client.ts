@@ -4,6 +4,7 @@ import { UserType } from "../types/UserType";
 import { User } from "./User";
 import { UserController } from "../controller/UserController";
 import { ChannelController } from "../controller/ChannelController";
+import { GuildController } from "../controller/GuildController";
 
 export class Client {
     token: string;
@@ -12,6 +13,7 @@ export class Client {
     user?: User;
     users: UserController;
     channels: ChannelController;
+    guilds: GuildController;
     constructor(options: ClientType){
         this.token = options.token;
         this.version = options.version || 10;
@@ -20,6 +22,7 @@ export class Client {
         let user: UserType;
         this.users = new UserController(this);
         this.channels = new ChannelController(this);
+        this.guilds = new GuildController(this);
         (async() => {
             user = await rest.get("users/@me");
             if(!user.id){
@@ -29,16 +32,5 @@ export class Client {
             }
         })();
     }
-
-    /**
-     * @description Get the user information
-     * @returns {Promise<UserType>}
-     * @memberof Client 
-     * @example
-     * client.getUser().then(user => {
-     *    console.log(user);
-     * });
-     * 
-     */
 
 }

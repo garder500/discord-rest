@@ -75,8 +75,8 @@ export class RestManager {
         return await this.request<T>(endpoint, 'PUT', body);
     }
 
-    public async delete<T>(endpoint: string, body: any): Promise<T> {
-        return await this.request<T>(endpoint, 'DELETE', body);
+    public async delete<T>(endpoint: string): Promise<T> {
+        return await this.request<T>(endpoint, 'DELETE');
     }
 
     public async patch<T>(endpoint: string, body: any): Promise<T> {

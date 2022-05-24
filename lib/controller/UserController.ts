@@ -8,7 +8,7 @@ export class UserController {
         this.client = client;
     }
 
-    async get(id: string): Promise<User> {
+    async fetch(id: string): Promise<User> {
         return new Promise<User>((resolve, reject) => {
              this.client.rest.get<UserType>(`users/${id}`).then((user) => {
                  resolve(new User(this.client, user));

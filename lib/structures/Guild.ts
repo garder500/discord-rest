@@ -1,6 +1,8 @@
 import { Client } from './Client';
 import { Base } from './Base';
 import { APIGuild, APIGuildWelcomeScreen, APIRole, APISticker } from 'discord-api-types/v10';
+import { Channel } from './Channel';
+import { ChannelType } from '../types/ChannelType';
 
 export class Guild extends Base {
     id:string;
@@ -87,6 +89,36 @@ export class Guild extends Base {
         this.nsfwLevel = data.nsfw_level;
         this.stickers = data.stickers;
         this.premium_progress_bar_enabled = data.premium_progress_bar_enabled;
+    }
+    
+    async getChannels(): Promise<Channel[]> {
+        return new Promise<Channel[]>((resolve, reject) => {
+            this.client.rest.get<ChannelType[]>(`guilds/${this.id}/channels`).then((channels) => {
+                resolve(channels.map(channel => new Channel(this.client, channel)));
+            }).catch(err => {
+                reject(err);
+            });
+        });
+    } 
+
+    async delete(): Promise<void> {
+        return new Promise<void>((resolve, reject) => {
+            this.client.rest.delete<null>(`guilds/${this.id}`).then(() => {
+                resolve();
+            }).catch(err => {
+                reject(err);
+            });
+        });
+    }
+
+    async edit(options: APIGuild): Promise<Guild> {
+        return new Promise<Guild>((resolve, reject) => {
+            this.client.rest.patch<APIGuild>(`guilds/${this.id}`, options).then((data) => {
+                resolve(new Guild(this.client, data));
+            }).catch(err => {
+                reject(err);
+            });
+        });
     }
 
     toJSON(){
