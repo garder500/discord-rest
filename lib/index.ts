@@ -10,3 +10,4 @@ export * from "./types/MessageType";
 export * from "./types/UserType";
 export * from "./controller/ChannelController";
 export * from "./controller/UserController";
+export * from "./controller/GuildController";
