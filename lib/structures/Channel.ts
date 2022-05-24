@@ -3,6 +3,7 @@ import { Client } from "./Client";
 import { User }from "./User";
 import { ChannelType, PermissionOverwrite, ChannelEnum} from "../types/ChannelType";
 import { MessageType } from "../types/MessageType";
+import { Message } from "./Message";
 
 export class Channel extends Base {
     // add properties here
@@ -123,15 +124,14 @@ export class Channel extends Base {
         }
     }
 
-    async send(corp: string | MessageType): Promise<MessageType> {
+    async send(corp: string | MessageType): Promise<Message> {
         let content: MessageType; 
         if(typeof corp === "string"){
             content = { content: corp };
         } else {
             content = corp;
         }
-       let response = this.client.rest.post<MessageType>(`/channels/${this.id}/messages`, content);
-         return response;
+        return new Message(this.client,await this.client.rest.post<MessageType>(`/channels/${this.id}/messages`, content));
     }
 }
 

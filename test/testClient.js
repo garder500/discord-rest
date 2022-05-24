@@ -1,9 +1,15 @@
-const { Client, Guild } = require('../src/index');
+const { Client } = require('../src/index.js');
 
-const client = new Client({ token: "OTU1MTE4OTQ0Nzc0MTQ0MDkw.GAvp2a.TcVPF61GYE2-b_f3x4USHKF6oX5xgbaOAMFF8w" });
+const client = new Client({ token: "//////" });
 
-client.channels.get("926457605587611658").then(channel => {
-        channel.send("Hello World! Je test ma librairie perso mdr").then(message => {
-            console.log(message);
-        }).catch(console.error);
-}).catch(console.error);
+client.guilds.fetch("919356120466857984").then(guild => {
+    guild.getChannels().then(channels => {
+        channels.forEach(channel => {
+            if(channel.name === "global-chat") {
+            channel.send("Hello World!").then(message => {
+                console.log(message);
+            });
+            }
+        });
+    });
+});
