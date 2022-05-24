@@ -2,7 +2,7 @@
 
 This module provides a Coverage of the REST API of the Discord API in Node.js. 
 
-[![publish](https://github.com/garder500/discord-rest/actions/workflows/docs-generator.yml/badge.svg)](https://github.com/garder500/discord-rest/actions/workflows/npm-publish.yml)
+[![publish](https://github.com/garder500/discord-rest/actions/workflows/linter.yml/badge.svg)](https://github.com/garder500/discord-rest/actions/workflows/npm-publish.yml)
 <span class="badge-npmversion"><a href="https://npmjs.org/package/discord-rest" title="View this project on NPM"><img src="https://img.shields.io/npm/v/discord-rest.svg" alt="NPM version" /></a></span>
 <span class="badge-npmdownloads"><a href="https://npmjs.org/package/discord-rest" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/discord-rest.svg" alt="NPM downloads" /></a></span>
 <br class="badge-separator" />

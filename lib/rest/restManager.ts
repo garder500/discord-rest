@@ -29,7 +29,7 @@ export class RestManager {
     // the headers are set in the function and are the default headers
     // the function returns a promise that resolves to the response
 
-    private async request<T>(endpoint: string, method: string, body: RequestOptions["body"] | null = null): Promise<T> {
+    private async request<T>(endpoint: string, method: string, body:FormData | RequestOptions["body"] | object | null = null): Promise<T> {
         const url = this.baseURL + endpoint;
         const options: RequestOptions = {
             method: method,
@@ -74,11 +74,11 @@ export class RestManager {
         return await this.request<T>(endpoint, 'GET', null);
     }
 
-    public async post<T>(endpoint: string, body: RequestOptions["body"]): Promise<T> {
+    public async post<T>(endpoint: string, body: FormData | RequestOptions["body"] | object | null): Promise<T> {
         return await this.request<T>(endpoint, 'POST', body);
     }
 
-    public async put<T>(endpoint: string, body: RequestOptions["body"]): Promise<T> {
+    public async put<T>(endpoint: string, body: FormData | RequestOptions["body"] | object | null): Promise<T> {
         return await this.request<T>(endpoint, 'PUT', body);
     }
 
@@ -86,7 +86,7 @@ export class RestManager {
         return await this.request<T>(endpoint, 'DELETE');
     }
 
-    public async patch<T>(endpoint: string, body: RequestOptions["body"]): Promise<T> {
+    public async patch<T>(endpoint: string, body: FormData | RequestOptions["body"] | object | null): Promise<T> {
         return await this.request<T>(endpoint, 'PATCH', body);
     }
     
