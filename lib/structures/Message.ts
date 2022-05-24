@@ -1,4 +1,3 @@
-import { ChannelType } from 'discord-api-types/v10';
 import { ChannelType } from '../types/ChannelType';
 import { attachmentsType, EmbedType, MessageType, ReactionsType } from '../types/MessageType';
 import { UserType } from '../types/UserType';
