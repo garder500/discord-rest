@@ -42,7 +42,7 @@ jobs:
           if [ $BOOL = true ]; then
             # Get last dev version
             VERSION=$(npm view discord-rest@dev version)
-            npm deprecate discord-rest@"$VERSION"
+            npm deprecate discord-rest@"$VERSION" "This version is deprecated move to the latest stable version"
             npm publish --tag dev
           else
             npm run increment
