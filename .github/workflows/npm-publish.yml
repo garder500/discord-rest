@@ -6,6 +6,8 @@ name: publish
 on:
   release:
     types: [created]
+  workflow_dispatch:
+
 
 jobs:
   build:
@@ -27,12 +29,16 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
+      - name: Install packages
+        run: npm ci
       - run: |
           npm install typescript
           npx tsc
           rm -rf node_modules
           rm -rf lib
-          npm publish
+          $VALUE = node -p "require('./package.json').version.includes('dev')"
+          echo "version: $VALUE"
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      
+    
