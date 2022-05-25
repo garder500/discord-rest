@@ -38,6 +38,7 @@ export class Oauth2 extends Base {
      * @see https://discordapp.com/developers/docs/topics/oauth2#scope-guilds-join
      */
     getRedirectURL(redirect_uri: string, scope: string[], state = "prompt"): string {
+        if(!this.client.application) throw new Error("Client application is not set.");
         return `https://discordapp.com/api/oauth2/authorize?client_id=${this.client.application.id}&redirect_uri=${redirect_uri}&response_type=code&scope=${encodeURIComponent(scope.join(" "))}&state=${state}`;
     }
     /**
@@ -57,8 +58,9 @@ export class Oauth2 extends Base {
      */
     async getAccessToken(code: string, redirect_uri: string): Promise<RESTPostOAuth2AccessTokenResult> {
         return new Promise((resolve, reject) => {
+            if(!this.client.application) throw new Error("Client application is not set.");
             this.client.rest.post<RESTPostOAuth2AccessTokenResult>("/oauth2/token", {
-                client_id: this.client.application.id,
+                client_id: this.client?.application.id,
                 client_secret: this.client.secret,
                 grant_type: "authorization_code",
                 code,
@@ -88,6 +90,7 @@ export class Oauth2 extends Base {
      */
     async refreshAccessToken(refresh_token: string): Promise<RESTPostOAuth2AccessTokenResult> {
         return new Promise((resolve, reject) => {
+            if(!this.client.application) throw new Error("Client application is not set.");
             this.client.rest.post<RESTPostOAuth2AccessTokenResult>("/oauth2/token", {
                 client_id: this.client.application.id,
                 client_secret: this.client.secret,
@@ -117,6 +120,7 @@ export class Oauth2 extends Base {
      */
     async revokeAccessToken(token: string): Promise<void> {
         return new Promise((resolve, reject) => {
+            if(!this.client.application) throw new Error("Client application is not set.");
             this.client.rest.post<void>("/oauth2/revoke", {
                 client_id: this.client.application.id,
                 client_secret: this.client.secret,

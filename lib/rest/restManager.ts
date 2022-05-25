@@ -16,8 +16,10 @@ export class RestManager {
     readonly version: number;
     private headers: RequestOptions["headers"];
 
-    constructor(token: string, version =10) {
+    constructor(token: string, version = 10) {
         this.baseURL = `https://discord.com/api/v${version}/`;
+        if (!token)
+            throw new Error("Token is required");
         this.token = token;
         this.version = version;
         this.headers = {
@@ -29,7 +31,7 @@ export class RestManager {
     // the headers are set in the function and are the default headers
     // the function returns a promise that resolves to the response
 
-    private async request<T>(endpoint: string,headers: RequestOptions["headers"] = {}, method: string, body:FormData | RequestOptions["body"] | object | null = null): Promise<T> {
+    private async request<T>(endpoint: string, headers: RequestOptions["headers"] = {}, method: string, body: FormData | RequestOptions["body"] | object | null = null): Promise<T> {
         const url = this.baseURL + endpoint;
         const options: RequestOptions = {
             method: method,
@@ -40,63 +42,67 @@ export class RestManager {
                 'Content-Disposition': 'form-data'
             },
         };
-        if(headers){
-            if(options.headers){
+        if (headers != {}) {
+            if (options.headers) {
                 for (const [key, value] of Object.entries(headers)) {
                     options.headers[key] = value;
                 }
             }
         }
         if (body) {
-            if(body instanceof FormData) {
+            if (body instanceof FormData) {
                 options.body = body;
-                }
-            }else{
+            } else {
                 options.body = JSON.stringify(body);
             }
-        if(options.headers){
-            if(body instanceof FormData){
+        }
+        if (options.headers) {
+            if (body instanceof FormData) {
                 options.headers['Content-Type'] = 'multipart/form-data';
                 options.headers['Content-Disposition'] = body.getHeaders()['content-disposition'];
                 options.headers['Content-Length'] = body.getLengthSync().toString();
-            }else{
+            } else {
                 options.headers['Content-Type'] = 'application/json';
             }
-        }
-
-
+        }            
         const response = await fetch(url, options);
         if (response.status === 204) {
             return await response.json();   
         }
         const responseBody = await response.json();
         if (response.status !== 200 && response.status !== 201) {
-            console.error(util.inspect(responseBody, { depth: null }));
+            console.error({
+                message: responseBody.message,
+                code: responseBody.code,
+                path: endpoint,
+                errors: responseBody.errors ? responseBody.errors : null,
+                method: method
+            })
             throw new Error(responseBody.message);
         }
         return responseBody;
     }
 
-    public async get<T>(endpoint: string, headers: RequestOptions["headers"]= {}): Promise<T> {
-        return await this.request<T>(endpoint,headers, 'GET', null);
+    public async get<T>(endpoint: string, headers: RequestOptions["headers"] = {}): Promise<T> {
+        return await this.request<T>(endpoint, headers, 'GET');
     }
 
-    public async post<T>(endpoint: string, body: FormData | RequestOptions["body"] | object | null, headers: RequestOptions["headers"] = {}): Promise<T> {
-        return await this.request<T>(endpoint,headers, 'POST', body);
+    public async post<T>(endpoint: string, body: FormData | RequestOptions["body"] | object| null = null, headers: RequestOptions["headers"] = {}): Promise<T> {
+        return await this.request<T>(endpoint, headers, 'POST', body);
     }
 
-    public async put<T>(endpoint: string, body: FormData | RequestOptions["body"] | object | null, headers: RequestOptions["headers"]= {}): Promise<T> {
-        return await this.request<T>(endpoint,headers, 'PUT', body);
+    public async put<T>(endpoint: string, body: FormData | RequestOptions["body"] | object| null = null, headers: RequestOptions["headers"] = {}): Promise<T> {
+        return await this.request<T>(endpoint, headers, 'PUT', body);
     }
 
-    public async delete<T>(endpoint: string,headers: RequestOptions["headers"] = {}): Promise<T> {
-        return await this.request<T>(endpoint,headers, 'DELETE');
+    public async delete<T>(endpoint: string, headers: RequestOptions["headers"] = {}): Promise<T> {
+        return await this.request<T>(endpoint, headers, 'DELETE');
     }
 
-    public async patch<T>(endpoint: string, body: FormData | RequestOptions["body"] | object | null,headers: RequestOptions["headers"]= {}): Promise<T> {
-        return await this.request<T>(endpoint,headers,'PATCH', body);
+    public async patch<T>(endpoint: string, body: FormData | RequestOptions["body"] | object| null = null, headers: RequestOptions["headers"] = {}): Promise<T> {
+        return await this.request<T>(endpoint, headers, 'PATCH', body);
     }
 
-     
-    
+
+
 }

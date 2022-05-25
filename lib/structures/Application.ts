@@ -45,7 +45,7 @@ export class Application extends Base {
     async resolver(): Promise<APIApplication> {
        return new Promise((resolve, reject) => {
             // use rest api to get application
-            this.client.rest.get<APIApplication>(`/applications/@me`).then((application) => {
+            this.client.rest.get<APIApplication>(`oauth2/applications/@me`).then((application) => {
                 this.id = application.id;
                 this.name = application.name;
                 this.description = application.description;

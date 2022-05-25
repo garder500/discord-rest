@@ -23,7 +23,7 @@ export class Client {
     version: number | undefined;
     rest: RestManager;
     user?: User;
-    application:Application;
+    application?:Application;
     users: UserController;
     channels: ChannelController;
     guilds: GuildController;
@@ -34,19 +34,15 @@ export class Client {
         this.version = options.version || 10;
         const rest = new RestManager(this.token, this.version);
         this.rest = rest;
-        let user: UserType;
-        this.application = new Application(this);
         this.users = new UserController(this);
         this.channels = new ChannelController(this);
         this.guilds = new GuildController(this);
-        (async() => {
-            user = await rest.get("users/@me");
-            if(!user.id){
-                throw new Error("Invalid token");
-            }else{
-                this.user = new User(this, user);
-            }
-        })();
+      rest.get<UserType>("users/@me").then(user => {
+            this.user = new User(this, user);
+            this.application = new Application(this);
+        }).catch(err => {
+            console.error(err);
+        });
     }
     /**
      * Set 0auth2 credentials to authenticate with the Discord API.

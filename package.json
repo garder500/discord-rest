@@ -1,6 +1,6 @@
 {
     "name": "discord-rest",
-    "version": "1.0.8",
+    "version": "1.0.9-dev1653437972-ga0f0f9e",
     "description": "A discord Rest Manager(API only)",
     "main": "src/index.js",
     "types": "src/index.d.ts",
