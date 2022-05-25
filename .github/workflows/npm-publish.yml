@@ -39,7 +39,7 @@ jobs:
           rm -rf lib
           node -p "require('./package.json').version.includes('dev')"
           if [ $? -eq 0 ]; then
-            npm deprecate discord-rest@"$(node -p "require('./package.json').version")"
+            npm deprecate discord-rest@"$(node -p "require('./package.json').version")" "This version is deprecated, please use the latest version"
             npm run increment
             sleep 2
             npm publish --tag dev
