@@ -16,13 +16,15 @@ function generateRandomUid() {
 
 
 // Check actual version number and check if the dev flag is set
-if(packageJson.version.indexOf('-dev') === -1) {
+if(packageJson.version.includes('dev')) {
     // Split the version number
     const versionParts = packageJson.version.split('-')
     // Set new variables to check each part of the version number
     let versionDev = versionParts[0];
     let devId = Date.now() + "-" + generateRandomUid();
     // Write the new version number inside the package.json file
+    console.log("devId: " + devId);
+    console.log("versionDev: " + versionDev);
     packageJson.version = versionDev + '-' + devId;
     // Write the new version number inside the package.json file
     fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
@@ -34,7 +36,7 @@ if(packageJson.version.indexOf('-dev') === -1) {
     let minor = versionParts[1];
     let patch = versionParts[2];
     // increment the patch number
-    patch++;
+    patch = parseInt(patch) + 1;
     // Write the new version number inside the package.json file
     packageJson.version = major + '.' + minor + '.' + patch;
     // Write the new version number inside the package.json file
