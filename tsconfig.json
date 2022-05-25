@@ -28,6 +28,7 @@
     "entryPoints": ["lib/index.ts"],
     "entryPointStrategy":"expand",
     "name": "discord-rest",
-    "out": "docs"
+    "out": "docs",
+    "includeVersion": true,
   },
 }
