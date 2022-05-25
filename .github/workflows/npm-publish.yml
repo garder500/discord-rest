@@ -38,9 +38,9 @@ jobs:
           npx tsc
           rm -rf node_modules
           rm -rf lib
-          node -p "require('./package.json').version.includes('dev')"
-          if [ $? -eq 0 ]; then
-          
+          BOOL = node -p "require('./package.json').version.includes('dev')"
+          if [ $BOOL = true ]; then
+            npm deprecate discord-rest@"$(node -p "require('./package.json').version")"
             npm run increment
             git add package.json
             git commit -m "chore: release"
@@ -53,7 +53,7 @@ jobs:
             git commit -m "chore: release"
             git push
             sleep 2
-            npm publish --tag latest
+            npm publish --access public --tag latest
           fi
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
