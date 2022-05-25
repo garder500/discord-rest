@@ -6,7 +6,8 @@
     "types": "src/index.d.ts",
     "scripts": {
         "test": "echo All right everything is fine",
-        "lint": "eslint ."
+        "lint": "eslint .",
+        "increment": "node scripts/version-id-generate.js"
     },
     "repository": {
         "type": "git",

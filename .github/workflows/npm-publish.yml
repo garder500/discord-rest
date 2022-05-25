@@ -31,16 +31,22 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Install packages
         run: npm ci
-      - run: |
+      - name: Publish
+        run: |
           npm install typescript
           npx tsc
           rm -rf node_modules
           rm -rf lib
           node -p "require('./package.json').version.includes('dev')"
           if [ $? -eq 0 ]; then
-            echo "This is a development version, not publishing to npm"
+            npm deprecate discord-rest@"$(node -p "require('./package.json').version")"
+            npm run increment
+            sleep 2
+            npm publish --tag dev
           else
-            echo "Publishing to npm"
+            npm run increment
+            sleep 2
+            npm publish --tag latest
           fi
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
