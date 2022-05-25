@@ -36,8 +36,12 @@ jobs:
           npx tsc
           rm -rf node_modules
           rm -rf lib
-          $VALUE = node -p "require('./package.json').version.includes('dev')"
-          echo "version: $VALUE"
+          node -p "require('./package.json').version.includes('dev')"
+          if [ $? -eq 0 ]; then
+            echo "This is a development version, not publishing to npm"
+          else
+            echo "Publishing to npm"
+          fi
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
       
