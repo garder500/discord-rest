@@ -38,7 +38,7 @@ jobs:
           npx tsc
           rm -rf node_modules
           rm -rf lib
-          BOOL = node -p "require('./package.json').version.includes('dev')"
+          BOOL = $(node -p "require('./package.json').version.includes('dev')")
           if [ $BOOL = true ]; then
             # Get last dev version
             VERSION=$(npm view discord-rest@dev version)
