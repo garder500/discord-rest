@@ -33,18 +33,25 @@ jobs:
         run: npm ci
       - name: Publish
         run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           npm install typescript
           npx tsc
           rm -rf node_modules
           rm -rf lib
           node -p "require('./package.json').version.includes('dev')"
           if [ $? -eq 0 ]; then
-            npm deprecate discord-rest@"$(node -p "require('./package.json').version")" "This version is deprecated, please use the latest version"
             npm run increment
+            git add package.json
+            git commit -m "chore: release"
+            git push
             sleep 2
             npm publish --tag dev
           else
             npm run increment
+            git add package.json
+            git commit -m "chore: release"
+            git push
             sleep 2
             npm publish --tag latest
           fi
