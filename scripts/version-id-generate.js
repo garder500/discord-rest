@@ -21,7 +21,7 @@ if(packageJson.version.includes('dev')) {
     const versionParts = packageJson.version.split('-')
     // Set new variables to check each part of the version number
     let versionDev = versionParts[0];
-    let devId = Date.now() + "-" + generateRandomUid();
+    let devId = "dev" + Date.now() + "-" + generateRandomUid();
     // Write the new version number inside the package.json file
     console.log("devId: " + devId);
     console.log("versionDev: " + versionDev);
