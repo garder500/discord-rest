@@ -32,6 +32,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@garder500'
       - run: npm ci
+      - run: npm login --registry=https://npm.pkg.github.com/ --scope=@garder500
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
