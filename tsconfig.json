@@ -2,7 +2,7 @@
   "include": [
     "lib/**/*.ts"
   ],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules","scripts"],
   "compilerOptions": {
     "target": "es2020",                                 
     "module": "commonjs",                           

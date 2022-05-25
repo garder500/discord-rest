@@ -41,6 +41,7 @@ jobs:
           rm -rf lib
           node -p "require('./package.json').version.includes('dev')"
           if [ $? -eq 0 ]; then
+          
             npm run increment
             git add package.json
             git commit -m "chore: release"

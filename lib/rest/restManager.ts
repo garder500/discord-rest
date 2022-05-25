@@ -1,6 +1,5 @@
 import fetch from "../utils/request";
 import FormData from "form-data";
-import util from "util";
 import { RequestInit } from "node-fetch";
 
 export interface RequestOptions extends RequestInit {

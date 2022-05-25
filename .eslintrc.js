@@ -13,7 +13,7 @@ module.exports = {
         "ecmaVersion": 12,
         "sourceType": "module"
     },
-    "ignorePatterns": ["node_modules/*","test/*","src/*"],
+    "ignorePatterns": ["node_modules/*","test/*","src/*","scripts/*"],
     "plugins": [
         "@typescript-eslint"
     ],
