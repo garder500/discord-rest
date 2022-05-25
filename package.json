@@ -1,43 +1,43 @@
 {
-    "name": "discord-rest",
-    "version": "1.0.9-dev1653437972-ga0f0f9e",
-    "description": "A discord Rest Manager(API only)",
-    "main": "src/index.js",
-    "types": "src/index.d.ts",
-    "scripts": {
-        "test": "echo All right everything is fine",
-        "lint": "eslint .",
-        "increment": "node scripts/version-id-generate.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/garder500/discord-rest.git"
-    },
-    "keywords": [
-        "discord",
-        "api",
-        "bot",
-        "client",
-        "node",
-        "discordapp"
-    ],
-    "bugs": {
-        "url": "https://github.com/garder500/discord-rest/issues"
-    },
-    "homepage": "https://discord-rest.js.org",
-    "author": "garder500 <jeremy27.clara22@gmail.com>",
-    "license": "MIT",
-    "dependencies": {
-        "form-data": "^4.0.0",
-        "node-fetch": "^2.6.7"
-    },
-    "devDependencies": {
-        "@types/node-fetch": "^2.6.1",
-        "@typescript-eslint/eslint-plugin": "^5.26.0",
-        "@typescript-eslint/parser": "^5.26.0",
-        "discord-api-types": "^0.33.0",
-        "eslint": "^8.16.0",
-        "typedoc": "^0.22.15",
-        "typescript": "^4.6.4"
-    }
+  "name": "discord-rest",
+  "version": "1.0.9-1653486430277-soxogp2c",
+  "description": "A discord Rest Manager(API only)",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "test": "echo All right everything is fine",
+    "lint": "eslint .",
+    "increment": "node scripts/version-id-generate.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/garder500/discord-rest.git"
+  },
+  "keywords": [
+    "discord",
+    "api",
+    "bot",
+    "client",
+    "node",
+    "discordapp"
+  ],
+  "bugs": {
+    "url": "https://github.com/garder500/discord-rest/issues"
+  },
+  "homepage": "https://discord-rest.js.org",
+  "author": "garder500 <jeremy27.clara22@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "form-data": "^4.0.0",
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.1",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "discord-api-types": "^0.33.0",
+    "eslint": "^8.16.0",
+    "typedoc": "^0.22.15",
+    "typescript": "^4.7.2"
+  }
 }
