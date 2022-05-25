@@ -30,7 +30,7 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - name: Install packages
-        run: npm ci
+        run: npm install
       - name: Publish
         run: |
           git config --global user.name "github-actions[bot]"
