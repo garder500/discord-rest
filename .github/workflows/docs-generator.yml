@@ -24,7 +24,7 @@ jobs:
       - name: Install packages
         run: npm ci
       - name: Build project
-        run: npx typedoc --json api.json --pretty
+        run: npx typedoc --json ./docs/api.json --pretty
       - name: Add .nojekyll file
         run: touch ./docs/.nojekyll
       - name: Deploy
